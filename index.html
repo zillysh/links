@@ -4,39 +4,25 @@
 	<head>
 		<link href="assets/reset.css" rel="stylesheet">
 		<link href="assets/style.css" rel="stylesheet">
+		<script defer src="arena.js"></script>
 		<title>Are.Na</title>
 	</head>
 	<body>
 		<header>
-			<h1>Microplastics</h1>
+			<h1 id="channel-title"></h1>
+			<p id="channel-link"></p>
+			<section id="channel-description"></section>
+			<p class="text"> The idea is to have the images be so small - to represent microplastics !</p>
 		</header>
 		<main>
-			<div>
-				<h2>About plastics</h2>
-				<p>There’s enough plastic in the world to outweigh the mass of all Earth’s mammals. Ain’t that something? Though the fossil fuel companies that produce all this plastic (and simultaneously pollute nearby neighborhoods) are at fault, we should also take a look in the mirror. How much plastic do you consume? Every dollar we spend is a vote, so every time we buy plastic, we’re telling those companies to keep on producing it.</p>
-			</div>
-			<div>
-				<h2>Ocean Fishing</h2>
-				<img src="oceanfishing.jpg" alt="Boat on blue ocean with man holding fishing net.">
-			</div>
-			<div>
-				<video controls>
-					<source src="myVideo.mp4" type="video/mp4" />
-					<p>
-					  Your browser doesn't support HTML video. Here is a
-					  <a href="myVideo.mp4">link to the video</a> instead.
-					</p>
-				</video>
-			</div>
-			<div>
-				<a href="https://encounteredu.com/multimedia/images/sources-of-microplastics">Where do microplastics come from?</a>
-			</div>
-			<div>
-				<object type="application/pdf" data="plasticpollution.pdf" width="250" height="200"></object>
-			</div>
+			<section>
+				<ul id="channel-blocks"></ul>
+				<p><span id="channel-count"></span> blocks</p>
+			</section>
 		</main>
 		<footer>
-			<p>©️ Zil Shah, 2024</p>
+			<h2>Your authors</h2>
+			<section id="channel-users"></section>
 		</footer>
 	</body>
 </html>
