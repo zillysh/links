@@ -7,7 +7,7 @@ document.head.appendChild(markdownIt)
 
 
 // Okay, Are.na stuff!
-let channelSlug = 'typography-interaction-bv9m3ntxkps' // The “slug” is just the end of the URL
+let channelSlug = 'microplastics-cwffpwvgluo' // The “slug” is just the end of the URL
 
 
 // First, let’s lay out some *functions*, starting with our basic metadata:
@@ -49,12 +49,12 @@ let renderBlock = (block) => {
 	// Images!
 	else if (block.class == 'Image') {
 		let imageItem =
-		// `
-		// 	<li>
-		// 		<figure>
-		// 		<img class="image-style" src="${block.image.large.url}" alt="${block.title} by ${block.user.full-name}">
-		// 		</figure>
-		// 	</li>
+		`
+			<li>
+				<figure>
+				<img class="image-style" src="${block.image.large.url}" alt="${block.title} by ${block.user.full-name}">
+				</figure>
+			</li>
 		`
 	channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 	}
