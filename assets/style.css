@@ -1,20 +1,42 @@
+/*LINKED FONTS*/
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+
+/* VARIABLES */
+
+/* FONTS */
 :root {
-    --font-size: 20px;
-    --gutter: calc(var(--font-size)*2);
+--font-pinyon: "Pinyon Script", cursive;
+}
+
+/* FONT DETAILS */
+:root{
+  --heading-font-size: 5rem;
 }
 
 
-body {
-    font-size: var(--font-size);
-    padding: calc(var(--gutter) * 3)
+/* MARGINS */
+
+
+
+
+/*WEBSITE HEADING*/
+
+h1  { 
+font-family: var(--font-pinyon);
+font-size: var(--heading-font-size);
+margin-top: 40vh;
+text-align: center;
+color: white;
 }
 
+header {
+  background-image: url(backgroundwaves.jpg);
+  background-size: cover;
+  background-position: center center;
+}
 
-.mainimage {
+.image-style {
     width: 10px;
     height: 10px;
 }
 
-.text {
-    font-size: 5em;
-}

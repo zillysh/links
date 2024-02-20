@@ -35,26 +35,26 @@ let renderBlock = (block) => {
 	// Links!
 	if (block.class == 'Link') {
 		let linkItem =
-			`
-			<li class="block">
-				<p><em>Link</em></p>
-				<h3>${ block.title }</h3>
-				${ block.description_html }
-				<p><a href="${ block.source.url }">See the original ↗</a></p>
-			</li>
-			`
+			// `
+			// <li class="block">
+			// 	<p><em>Link</em></p>
+			// 	<h3>${ block.title }</h3>
+			// 	${ block.description_html }
+			// 	<p><a href="${ block.source.url }">See the original ↗</a></p>
+			// </li>
+			// `
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
 
 	// Images!
 	else if (block.class == 'Image') {
 		let imageItem =
-		`
-			<li>
-				<figure>
-				<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full-name}" class=mainimage>
-				</figure>
-			</li>
+		// `
+		// 	<li>
+		// 		<figure>
+		// 		<img class="image-style" src="${block.image.large.url}" alt="${block.title} by ${block.user.full-name}">
+		// 		</figure>
+		// 	</li>
 		`
 	channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 	}
@@ -62,13 +62,13 @@ let renderBlock = (block) => {
 	// Text!
 	else if (block.class == 'Text') {
 		let textItem =
-		`
-			<li>
-				<blockquote>
-					${block.content_html}
-				</blockquote>
-			</li>
-		`
+		// `
+		// 	<li>
+		// 		<blockquote>
+		// 			${block.content_html}
+		// 		</blockquote>
+		// 	</li>
+		// `
 	channelBlocks.insertAdjacentHTML('beforeend', textItem)
 	}
 
@@ -94,16 +94,16 @@ let renderBlock = (block) => {
 		// Uploaded PDFs!
 		else if (attachment.includes('pdf')) {
 			let pdfItem =
-				`
-					<li>
-						<a href="${block.attachment.url}">
-							<figure>
-								<img src="${block.image.large.url}" alt="${block.title}">
-								<figcaption>${block.title}</figcaption>
-							</figure>
-						</a>
-					</li>
-				`
+				// `
+				// 	<li>
+				// 		<a href="${block.attachment.url}">
+				// 			<figure>
+				// 				<img src="${block.image.large.url}" alt="${block.title}">
+				// 				<figcaption>${block.title}</figcaption>
+				// 			</figure>
+				// 		</a>
+				// 	</li>
+				// `
 			channelBlocks.insertAdjacentHTML('beforeend', pdfItem);
 		}
 
