@@ -32,22 +32,9 @@ let renderBlock = (block) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.getElementById('channel-blocks')
 
-	// Links!
-	if (block.class == 'Link') {
-		let linkItem =
-			// `
-			// <li class="block">
-			// 	<p><em>Link</em></p>
-			// 	<h3>${ block.title }</h3>
-			// 	${ block.description_html }
-			// 	<p><a href="${ block.source.url }">See the original ↗</a></p>
-			// </li>
-			// `
-		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
-	}
 
 	// Images!
-	else if (block.class == 'Image') {
+	if (block.class == 'Image') {
 		let imageItem =
 		`
 			<li>
@@ -59,16 +46,30 @@ let renderBlock = (block) => {
 	channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 	}
 
+	// Links!
+	else if (block.class == 'Link') {
+		let linkItem =
+			`
+			<li class="block">
+				<p><em>Link</em></p>
+				<h3>${ block.title }</h3>
+				${ block.description_html }
+				<p><a href="${ block.source.url }">See the original ↗</a></p>
+			</li>
+			`
+		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
+	}
+
 	// Text!
 	else if (block.class == 'Text') {
 		let textItem =
-		// `
-		// 	<li>
-		// 		<blockquote>
-		// 			${block.content_html}
-		// 		</blockquote>
-		// 	</li>
-		// `
+		`
+			<li>
+				<blockquote>
+					${block.content_html}
+				</blockquote>
+			</li>
+		`
 	channelBlocks.insertAdjacentHTML('beforeend', textItem)
 	}
 
@@ -94,16 +95,16 @@ let renderBlock = (block) => {
 		// Uploaded PDFs!
 		else if (attachment.includes('pdf')) {
 			let pdfItem =
-				// `
-				// 	<li>
-				// 		<a href="${block.attachment.url}">
-				// 			<figure>
-				// 				<img src="${block.image.large.url}" alt="${block.title}">
-				// 				<figcaption>${block.title}</figcaption>
-				// 			</figure>
-				// 		</a>
-				// 	</li>
-				// `
+				`
+					<li>
+						<a href="${block.attachment.url}">
+							<figure>
+								<img src="${block.image.large.url}" alt="${block.title}">
+								<figcaption>${block.title}</figcaption>
+							</figure>
+						</a>
+					</li>
+				`
 			channelBlocks.insertAdjacentHTML('beforeend', pdfItem);
 		}
 
@@ -147,8 +148,6 @@ let renderBlock = (block) => {
 	}
 }
 
-
-
 // It‘s always good to credit your work:
 let renderUser = (user, container) => { // You can have multiple arguments for a function!
 	let userAddress =
@@ -161,7 +160,6 @@ let renderUser = (user, container) => { // You can have multiple arguments for a
 		`
 	container.insertAdjacentHTML('beforeend', userAddress)
 }
-
 
 
 // Now that we have said what we can do, go get the data:
@@ -181,4 +179,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// let channelUsers = document.getElementById('channel-users') // Show them together
 		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 		renderUser(data.user, channelUsers)
+
 	})
+
+

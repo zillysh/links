@@ -1,17 +1,20 @@
 /*LINKED FONTS*/
 @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
 
 /* VARIABLES */
 
 /* FONTS */
 :root {
   --font-pinyon: "Pinyon Script", cursive;
+  --font-dm-mono: "DM Mono", monospace;
 }
 
 /* FONT DETAILS */
 :root{
   --heading-font-size: 8em;
-  --description-font-size: 2em;
+  --description-font-size: 1.5em;
 }
 
 
@@ -42,16 +45,34 @@ h1 {
 }
 
 .description {
-  font-family: var(--font-pinyon);
+  font-family: var(--font-dm-mono);
+  font-weight: 400;
   font-size: var(--description-font-size);
-  padding-top: 10px;
   text-align: center;
   color: white;
+  padding-top: 5px;
+  padding-left: 200px;
+  padding-right: 200px;
 }
 
+.image-block {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
 
 .image-style {
   width: 10px;
   height: 10px;
 }
+
+/* 
+@media screen and (min-width: 510px) {
+
+  :root {
+    --heading-font-size: 6em;
+    --description-font-size: 1.3em;
+  }
+
+} */
+
 
