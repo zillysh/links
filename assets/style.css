@@ -16,29 +16,53 @@
 }
 
 
-/* MARGINS */
+/* SIZES */
 :root{
-
+--block-size: 8px;
 }
 
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* This will make sure the body takes up the full viewport height */
+}
+
+
+#channel-container {
+  width: 600px; /* Adjust the size of the circle */
+  height: 600px; /* Adjust the size of the circle */
+  border-radius: 50%;
+  background-color: lightgray; /* Change the background color as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  scroll-snap-type: x mandatory; /* Enable horizontal scrolling with mandatory snapping */
+}
 
 #channel-blocks {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 50px; 
   padding: 30px; 
   position: relative;
+  scroll-snap-type: x mandatory; /* Enable horizontal scrolling with mandatory snapping */
 }
 
 #channel-blocks li {
-  width: 30px;
-  height: 30px;
+  width: var(--block-size);
+  height: var(--block-size);
   border-radius: 50%;
   background-color: red; 
   position: absolute; 
   top: 0;
   left: 0;
+  scroll-snap-align: start; /* Snap each item to the start of the container */
 }
 
 
@@ -97,22 +121,20 @@
 /*IMAGES IMAGES IMAGES*/
 
 #channel-blocks li.Image {
-  width: 10px;
-  height: 10px;
   border-radius: 50%; 
   background-color: red;
   position: relative; 
 }
 
 #channel-blocks li.Image .image-content {
-  display: none;
-  position: absolute;
-  top: 50%;
+  display: none; 
+  position: fixed; 
+  top: 50%; 
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); 
   text-align: center;
   color: black;
-  z-index: 1;
+  z-index: 999; 
 }
 
 #channel-blocks li.Image:hover .image-content {
@@ -122,22 +144,20 @@
 /*VIDEOS VIDEOS VIDEOS*/
 
 #channel-blocks li.Video {
-  width: 10px;
-  height: 10px;
   border-radius: 50%; 
   background-color: blue;
   position: relative; 
 }
 
 #channel-blocks li.Video .video-content {
-  display: none;
-  position: absolute;
-  top: 50%;
+  display: none; 
+  position: fixed; 
+  top: 50%; 
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); 
   text-align: center;
   color: black;
-  z-index: 1;
+  z-index: 999; 
 }
 
 #channel-blocks li.Video:hover .video-content {
@@ -147,8 +167,6 @@
 /*TEXT TEXT TEXT*/
 
 #channel-blocks li.Text {
-  width: 10px; 
-  height: 10px;
   border-radius: 50%; 
   background-color: yellow;
   position: relative; 
@@ -156,13 +174,13 @@
 
 #channel-blocks li.Text .text-content {
   display: none; 
-  position: absolute;
-  top: 50%;
+  position: fixed; 
+  top: 50%; 
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); 
   text-align: center;
   color: black;
-  z-index: 1;
+  z-index: 999; 
 }
 
 #channel-blocks li.Text:hover .text-content {
@@ -172,8 +190,6 @@
 /*LINK LINK LINK*/
 
 #channel-blocks li.Link {
-  width: 10px; 
-  height: 10px;
   border-radius: 50%; 
   background-color: green;
   position: relative; 
@@ -198,8 +214,6 @@
 /*PDF PDF PDF*/
 
 #channel-blocks li.Pdf {
-  width: 10px; 
-  height: 10px;
   border-radius: 50%; 
   background-color: orange;
   position: relative;
@@ -209,7 +223,7 @@
   display: none; 
   position: fixed; 
   top: 50%; 
-  left: 50%; 
+  left: 50%;
   transform: translate(-50%, -50%); 
   text-align: center;
   color: black;
@@ -223,8 +237,6 @@
 /*AUDIO AUDIO AUDIO*/
 
 #channel-blocks li.Audio {
-  width: 10px; 
-  height: 10px;
   border-radius: 50%; 
   background-color: palevioletred;
   position: relative; 
@@ -233,7 +245,7 @@
 #channel-blocks li.Audio .audio-content {
   display: none; 
   position: fixed; 
-  top: 50%;
+  top: 50%; 
   left: 50%;
   transform: translate(-50%, -50%); 
   text-align: center;
