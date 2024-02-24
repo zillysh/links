@@ -7,72 +7,240 @@
 
 /* FONTS */
 :root {
-  --font-pinyon: "Pinyon Script", cursive;
-  --font-dm-mono: "DM Mono", monospace;
+
 }
 
 /* FONT DETAILS */
 :root{
-  --heading-font-size: 8em;
-  --description-font-size: 1.5em;
+
 }
 
 
 /* MARGINS */
+:root{
 
-
-
-
-/*WEBSITE HEADING*/
-
-.background-image {
-  background-image: url(../assets/backgroundwaves.jpg);
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: sticky;
-  width: 100%;
-  height: 98vh;
-  z-index: -1000;
 }
 
-h1 { 
-  font-family: var(--font-pinyon);
-  font-size: var(--heading-font-size);
-  padding-top: 42vh;
-  text-align: center;
-  color: white;
+
+
+#channel-blocks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px; 
+  padding: 30px; 
+  position: relative;
 }
 
-.description {
-  font-family: var(--font-dm-mono);
-  font-weight: 400;
-  font-size: var(--description-font-size);
-  text-align: center;
-  color: white;
-  padding-top: 5px;
-  padding-left: 200px;
-  padding-right: 200px;
+#channel-blocks li {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: red; 
+  position: absolute; 
+  top: 0;
+  left: 0;
 }
 
-.image-block {
-  position: absolute;
-  transform: translate(-50%, -50%);
+
+#channel-blocks li:nth-child(10n + 1) {
+  top: 10%;
+  left: 15%;
 }
 
-.image-style {
+#channel-blocks li:nth-child(10n + 2) {
+  top: 20%;
+  left: 15%;
+}
+
+#channel-blocks li:nth-child(10n + 3) {
+  top: 10%;
+  left: 5%;
+}
+
+#channel-blocks li:nth-child(10n + 4) {
+  top: 15%;
+  left: 40%;
+}
+
+#channel-blocks li:nth-child(10n + 5) {
+  top: 25%;
+  left: 85%;
+}
+
+#channel-blocks li:nth-child(10n + 6) {
+  top: 25%;
+  left: 20%;
+}
+
+#channel-blocks li:nth-child(10n + 7) {
+  top: 25%;
+  left: 25%;
+}
+
+#channel-blocks li:nth-child(10n + 8) {
+  top: 25%;
+  left: 30%;
+}
+
+#channel-blocks li:nth-child(10n + 9) {
+  top: 25%;
+  left: 55%;
+}
+
+#channel-blocks li:nth-child(10n + 10) {
+  top: 25%;
+  left: 70%;
+}
+
+
+
+/*IMAGES IMAGES IMAGES*/
+
+#channel-blocks li.Image {
   width: 10px;
   height: 10px;
+  border-radius: 50%; 
+  background-color: red;
+  position: relative; 
 }
 
-/* 
-@media screen and (min-width: 510px) {
+#channel-blocks li.Image .image-content {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: black;
+  z-index: 1;
+}
 
-  :root {
-    --heading-font-size: 6em;
-    --description-font-size: 1.3em;
-  }
+#channel-blocks li.Image:hover .image-content {
+  display: block; 
+}
 
-} */
+/*VIDEOS VIDEOS VIDEOS*/
+
+#channel-blocks li.Video {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%; 
+  background-color: blue;
+  position: relative; 
+}
+
+#channel-blocks li.Video .video-content {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: black;
+  z-index: 1;
+}
+
+#channel-blocks li.Video:hover .video-content {
+  display: block; 
+}
+
+/*TEXT TEXT TEXT*/
+
+#channel-blocks li.Text {
+  width: 10px; 
+  height: 10px;
+  border-radius: 50%; 
+  background-color: yellow;
+  position: relative; 
+}
+
+#channel-blocks li.Text .text-content {
+  display: none; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: black;
+  z-index: 1;
+}
+
+#channel-blocks li.Text:hover .text-content {
+  display: block; 
+}
+
+/*LINK LINK LINK*/
+
+#channel-blocks li.Link {
+  width: 10px; 
+  height: 10px;
+  border-radius: 50%; 
+  background-color: green;
+  position: relative; 
+}
+
+#channel-blocks li.Link .link-content {
+  display: none; 
+  position: fixed; 
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  color: black;
+  z-index: 999; 
+}
+
+#channel-blocks li.Link:hover .link-content {
+  display: block;
+}
 
 
+/*PDF PDF PDF*/
+
+#channel-blocks li.Pdf {
+  width: 10px; 
+  height: 10px;
+  border-radius: 50%; 
+  background-color: orange;
+  position: relative;
+}
+
+#channel-blocks li.Pdf .pdf-content {
+  display: none; 
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  color: black;
+  z-index: 999; 
+}
+
+#channel-blocks li.Pdf:hover .pdf-content {
+  display: block;
+}
+
+/*AUDIO AUDIO AUDIO*/
+
+#channel-blocks li.Audio {
+  width: 10px; 
+  height: 10px;
+  border-radius: 50%; 
+  background-color: palevioletred;
+  position: relative; 
+}
+
+#channel-blocks li.Audio .audio-content {
+  display: none; 
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  color: black;
+  z-index: 999; 
+}
+
+#channel-blocks li.Audio:hover .audio-content {
+  display: block;
+}

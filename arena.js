@@ -37,10 +37,13 @@ let renderBlock = (block) => {
 	if (block.class == 'Image') {
 		let imageItem =
 		`
-			<li>
-				<figure>
-				<img class="image-style" src="${block.image.large.url}" alt="${block.title} by ${block.user.full-name}">
-				</figure>
+			<li class="Image" >
+				<div class="image-content">
+					<figure>
+					<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
+					<figcaption>${block.title}</figcaption>
+					</figure>
+				</div>
 			</li>
 		`
 	channelBlocks.insertAdjacentHTML('beforeend', imageItem)
@@ -50,11 +53,12 @@ let renderBlock = (block) => {
 	else if (block.class == 'Link') {
 		let linkItem =
 			`
-			<li class="block">
+			<li class="Link">
+			<div class="link-content">
 				<p><em>Link</em></p>
 				<h3>${ block.title }</h3>
-				${ block.description_html }
 				<p><a href="${ block.source.url }">See the original ↗</a></p>
+			</div>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
@@ -64,10 +68,12 @@ let renderBlock = (block) => {
 	else if (block.class == 'Text') {
 		let textItem =
 		`
-			<li>
+			<li class="Text">
+			<div class="text-content">
 				<blockquote>
 					${block.content_html}
 				</blockquote>
+			</div>
 			</li>
 		`
 	channelBlocks.insertAdjacentHTML('beforeend', textItem)
@@ -82,9 +88,11 @@ let renderBlock = (block) => {
 			// …still up to you, but we’ll give you the `video` element:
 			let videoItem =
 				`
-				<li>
-					<p><em>Video</em></p>
-					<video controls src="${ block.attachment.url }"></video>
+				<li class=Video >
+					<div class="video-content">
+						<p><em>Video</em></p>
+						<video controls src="${ block.attachment.url }"></video>
+					</div>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
@@ -96,13 +104,15 @@ let renderBlock = (block) => {
 		else if (attachment.includes('pdf')) {
 			let pdfItem =
 				`
-					<li>
+					<li class="Pdf">
+					<div class="pdf-content">
 						<a href="${block.attachment.url}">
 							<figure>
 								<img src="${block.image.large.url}" alt="${block.title}">
 								<figcaption>${block.title}</figcaption>
 							</figure>
 						</a>
+					</div?>
 					</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', pdfItem);
@@ -113,9 +123,11 @@ let renderBlock = (block) => {
 			// …still up to you, but here’s an `audio` element:
 			let audioItem =
 				`
-				<li>
+				<li class="Audio">
+				<div class="audio-content">
 					<p><em>Audio</em></p>
 					<audio controls src="${ block.attachment.url }"></video>
+				</div>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
@@ -123,43 +135,20 @@ let renderBlock = (block) => {
 		}
 	}
 
-	// Linked media…
-	else if (block.class == 'Media') {
-		let embed = block.embed.type
-
-		// Linked video!
-		if (embed.includes('video')) {
-			// …still up to you, but here’s an example `iframe` element:
-			let linkedVideoItem =
-				`
-				<li>
-					<p><em>Linked Video</em></p>
-					${ block.embed.html }
-				</li>
-				`
-			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
-			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
-		}
-
-		// Linked audio!
-		else if (embed.includes('rich')) {
-			// …up to you!
-		}
-	}
 }
 
-// It‘s always good to credit your work:
-let renderUser = (user, container) => { // You can have multiple arguments for a function!
-	let userAddress =
-		`
-		<address>
-			<img src="${ user.avatar_image.display }">
-			<h3>${ user.first_name }</h3>
-			<p><a href="https://are.na/${ user.slug }">Are.na profile ↗</a></p>
-		</address>
-		`
-	container.insertAdjacentHTML('beforeend', userAddress)
-}
+// // It‘s always good to credit your work:
+// let renderUser = (user, container) => { // You can have multiple arguments for a function!
+// 	let userAddress =
+// 		`
+// 		<address>
+// 			<img src="${ user.avatar_image.display }">
+// 			<h3>${ user.first_name }</h3>
+// 			<p><a href="https://are.na/${ user.slug }">Are.na profile ↗</a></p>
+// 		</address>
+// 		`
+// 	container.insertAdjacentHTML('beforeend', userAddress)
+// }
 
 
 // Now that we have said what we can do, go get the data:
