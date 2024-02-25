@@ -132,10 +132,6 @@ body {
   z-index: 1;
 }
 
-#channel-blocks li.Image:Hover .image-content {
-  display: block; 
-}
-
 /*VIDEOS VIDEOS VIDEOS*/
 
 #channel-blocks li.Video {
@@ -144,7 +140,7 @@ body {
   position: relative; 
 }
 
-#channel-blocks li.Video .video-content {
+.video-content {
   display: none;
   position: fixed;
   top: 50%;
@@ -155,10 +151,6 @@ body {
   z-index: 1;
 }
 
-#channel-blocks li.Video:hover .video-content {
-  display: block; 
-}
-
 /*TEXT TEXT TEXT*/
 
 #channel-blocks li.Text {
@@ -167,7 +159,7 @@ body {
   position: relative; 
 }
 
-#channel-blocks li.Text .text-content {
+.text-content {
   display: none; 
   position: fixed;
   top: 50%;
@@ -178,10 +170,6 @@ body {
   z-index: 1;
 }
 
-#channel-blocks li.Text:hover .text-content {
-  display: block; 
-}
-
 /*LINK LINK LINK*/
 
 #channel-blocks li.Link {
@@ -190,7 +178,7 @@ body {
   position: relative; 
 }
 
-#channel-blocks li.Link .link-content {
+.link-content {
   display: none; 
   position: fixed; 
   top: 50%; 
@@ -201,11 +189,6 @@ body {
   z-index: 999; 
 }
 
-#channel-blocks li.Link:hover .link-content {
-  display: block;
-}
-
-
 /*PDF PDF PDF*/
 
 #channel-blocks li.Pdf {
@@ -214,7 +197,7 @@ body {
   position: relative;
 }
 
-#channel-blocks li.Pdf .pdf-content {
+.pdf-content {
   display: none; 
   position: absolute; 
   top: 50%; 
@@ -225,9 +208,6 @@ body {
   z-index: 999; 
 }
 
-#channel-blocks li.Pdf:hover .pdf-content {
-  display: block;
-}
 
 /*AUDIO AUDIO AUDIO*/
 
@@ -237,7 +217,7 @@ body {
   position: relative; 
 }
 
-#channel-blocks li.Audio .audio-content {
+.audio-content {
   display: none; 
   position: fixed; 
   top: 50%;
@@ -248,6 +228,6 @@ body {
   z-index: 999; 
 }
 
-#channel-blocks li.Audio:hover .audio-content {
-  display: block;
+.clicked{
+  display: block; 
 }

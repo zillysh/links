@@ -166,16 +166,74 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 
 		// Also display the owner and collaborators:
 		// let channelUsers = document.getElementById('channel-users') // Show them together
-		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
-		renderUser(data.user, channelUsers)
-		
-		let images = document.querySelectorAll('li.Image');
+		// data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
+		// renderUser(data.user, channelUsers)
 
-		images.forEach((image) => {
-		  image.onclick = () => {
-			let content = image.querySelector('.image-content');
-			content.classList.toggle('show');
-		  };
-		});
+    let currentImageContent = null;
+    const closeImageContent = () => {
+      if (currentImageContent) {
+        currentImageContent.classList.remove("clicked");
+        currentImageContent = null;
+      }
+    };
 
-});
+    // Add click event listener to toggle image content visibility
+    let images = document.querySelectorAll("li.Image");
+
+    images.forEach((image) => {
+      image.addEventListener("click", () => {
+        let content = image.querySelector(".image-content");
+
+        //   content.classList.toggle("clicked");
+
+        if (currentImageContent && currentImageContent !== content) {
+          currentImageContent.classList.remove("clicked");
+        }
+
+        // Toggle the 'show' class for the clicked image content
+        content.classList.toggle("clicked");
+
+        // Update the currently opened image content
+        currentImageContent = content;
+
+        event.stopPropagation();
+      });
+    });
+
+    document.body.addEventListener("click", () => {
+      closeImageContent();
+    });
+
+	let currentLinkContent = null; // Add this line to define currentLinkContent
+
+	// Add click event listener to toggle link content visibility
+	let links = document.querySelectorAll("li.Link");
+	
+	links.forEach((link) => {
+	  link.addEventListener("click", () => {
+		let content = link.querySelector(".link-content");
+	
+		if (currentLinkContent && currentLinkContent !== content) {
+		  currentLinkContent.classList.remove("clicked");
+		}
+	
+		content.classList.toggle("clicked");
+		currentLinkContent = content;
+	
+		event.stopPropagation();
+	  });
+	});
+	
+	document.body.addEventListener("click", () => {
+	  closeLinkContent();
+	});
+	
+	const closeLinkContent = () => {
+	  if (currentLinkContent) {
+		currentLinkContent.classList.remove("clicked");
+		currentLinkContent = null;
+	  }
+	};
+
+
+  });
