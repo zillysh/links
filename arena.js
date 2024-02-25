@@ -37,8 +37,7 @@ let renderBlock = (block) => {
 	if (block.class == 'Image') {
 		let imageItem =
 		`
-			<button>
-			<li class="image-button" >
+			<li class="Image" >
 				<div class="image-content">
 					<figure>
 					<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
@@ -46,7 +45,6 @@ let renderBlock = (block) => {
 					</figure>
 				</div>
 			</li>
-			</button>
 		`
 	channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 	}
@@ -172,5 +170,3 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		renderUser(data.user, channelUsers)
 
 	})
-
-
