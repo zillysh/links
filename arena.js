@@ -235,5 +235,128 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 	  }
 	};
 
+	let currentVideoContent = null;
+
+// Add click event listener to toggle video content visibility
+let videos = document.querySelectorAll("li.Video");
+
+videos.forEach((video) => {
+  video.addEventListener("click", (event) => {
+    let content = video.querySelector(".video-content");
+
+    if (currentVideoContent && currentVideoContent !== content) {
+      currentVideoContent.classList.remove("clicked");
+    }
+
+    content.classList.toggle("clicked");
+    currentVideoContent = content;
+
+    event.stopPropagation();
+  });
+});
+
+document.body.addEventListener("click", () => {
+  closeVideoContent();
+});
+
+const closeVideoContent = () => {
+  if (currentVideoContent) {
+    currentVideoContent.classList.remove("clicked");
+    currentVideoContent = null;
+  }
+};
+
+let currentTextContent = null;
+
+// Add click event listener to toggle text content visibility
+let texts = document.querySelectorAll("li.Text");
+
+texts.forEach((text) => {
+  text.addEventListener("click", (event) => {
+    let content = text.querySelector(".text-content");
+
+    if (currentTextContent && currentTextContent !== content) {
+      currentTextContent.classList.remove("clicked");
+    }
+
+    content.classList.toggle("clicked");
+    currentTextContent = content;
+
+    event.stopPropagation();
+  });
+});
+
+document.body.addEventListener("click", () => {
+  closeTextContent();
+});
+
+const closeTextContent = () => {
+  if (currentTextContent) {
+    currentTextContent.classList.remove("clicked");
+    currentTextContent = null;
+  }
+};
+
+let currentAudioContent = null;
+
+// Add click event listener to toggle audio content visibility
+let audios = document.querySelectorAll("li.Audio");
+
+audios.forEach((audio) => {
+  audio.addEventListener("click", (event) => {
+    let content = audio.querySelector(".audio-content");
+
+    if (currentAudioContent && currentAudioContent !== content) {
+      currentAudioContent.classList.remove("clicked");
+    }
+
+    content.classList.toggle("clicked");
+    currentAudioContent = content;
+
+    event.stopPropagation();
+  });
+});
+
+document.body.addEventListener("click", () => {
+  closeAudioContent();
+});
+
+const closeAudioContent = () => {
+  if (currentAudioContent) {
+    currentAudioContent.classList.remove("clicked");
+    currentAudioContent = null;
+  }
+};
+
+let currentPdfContent = null;
+
+// Add click event listener to toggle PDF content visibility
+let pdfs = document.querySelectorAll("li.Pdf");
+
+pdfs.forEach((pdf) => {
+  pdf.addEventListener("click", (event) => {
+    let content = pdf.querySelector(".pdf-content");
+
+    if (currentPdfContent && currentPdfContent !== content) {
+      currentPdfContent.classList.remove("clicked");
+    }
+
+    content.classList.toggle("clicked");
+    currentPdfContent = content;
+
+    event.stopPropagation();
+  });
+});
+
+document.body.addEventListener("click", () => {
+  closePdfContent();
+});
+
+const closePdfContent = () => {
+  if (currentPdfContent) {
+    currentPdfContent.classList.remove("clicked");
+    currentPdfContent = null;
+  }
+};
 
   });

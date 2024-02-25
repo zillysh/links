@@ -55,6 +55,7 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 50%;
+  border-width: 5px;
   position: absolute; 
   top: 0;
   left: 0;
