@@ -152,6 +152,7 @@ let renderBlock = (block) => {
 
 
 // Now that we have said what we can do, go get the data:
+
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
 	.then((response) => response.json()) // Return it as JSON data
 	.then((data) => { // Do stuff with the data
@@ -169,44 +170,40 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 		// renderUser(data.user, channelUsers)
 
-    let currentImageContent = null;
-    const closeImageContent = () => {
-      if (currentImageContent) {
-        currentImageContent.classList.remove("clicked");
-        currentImageContent = null;
-      }
-    };
 
     // Add click event listener to toggle image content visibility
-    let images = document.querySelectorAll("li.Image");
+	let currentImageContent = null;
+	let images = document.querySelectorAll("li.Image");
+	
+	images.forEach((image) => {
+	  image.addEventListener("click", () => {
+		let content = image.querySelector(".image-content");
+	
+		if (currentImageContent && currentImageContent !== content) {
+		  currentImageContent.classList.remove("clicked");
+		}
+	
+		content.classList.toggle("clicked");
+		currentImageContent = content;
 
-    images.forEach((image) => {
-      image.addEventListener("click", () => {
-        let content = image.querySelector(".image-content");
-
-        //   content.classList.toggle("clicked");
-
-        if (currentImageContent && currentImageContent !== content) {
-          currentImageContent.classList.remove("clicked");
-        }
-
-        // Toggle the 'show' class for the clicked image content
-        content.classList.toggle("clicked");
-
-        // Update the currently opened image content
-        currentImageContent = content;
-
-        event.stopPropagation();
-      });
-    });
-
-    document.body.addEventListener("click", () => {
-      closeImageContent();
-    });
-
-	let currentLinkContent = null; // Add this line to define currentLinkContent
+		event.stopPropagation(); // Prevent event propagation to parent elements
+	  });
+	});
+	
+	document.body.addEventListener("click", () => {
+	  closeImageContent();
+	});
+	
+	const closeImageContent = () => {
+	  if (currentImageContent) {
+		currentImageContent.classList.remove("clicked");
+		currentImageContent = null;
+	  }
+	};
+	
 
 	// Add click event listener to toggle link content visibility
+	let currentLinkContent = null; 
 	let links = document.querySelectorAll("li.Link");
 	
 	links.forEach((link) => {
@@ -235,128 +232,128 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 	  }
 	};
 
+
+	// Add click event listener to toggle video content visibility
 	let currentVideoContent = null;
+	let videos = document.querySelectorAll("li.Video");
 
-// Add click event listener to toggle video content visibility
-let videos = document.querySelectorAll("li.Video");
+	videos.forEach((video) => {
+	video.addEventListener("click", (event) => {
+		let content = video.querySelector(".video-content");
 
-videos.forEach((video) => {
-  video.addEventListener("click", (event) => {
-    let content = video.querySelector(".video-content");
+		if (currentVideoContent && currentVideoContent !== content) {
+		currentVideoContent.classList.remove("clicked");
+		}
 
-    if (currentVideoContent && currentVideoContent !== content) {
-      currentVideoContent.classList.remove("clicked");
-    }
+		content.classList.toggle("clicked");
+		currentVideoContent = content;
 
-    content.classList.toggle("clicked");
-    currentVideoContent = content;
+		event.stopPropagation();
+	});
+	});
 
-    event.stopPropagation();
-  });
+	document.body.addEventListener("click", () => {
+	closeVideoContent();
+	});
+
+	const closeVideoContent = () => {
+	if (currentVideoContent) {
+		currentVideoContent.classList.remove("clicked");
+		currentVideoContent = null;
+	}
+	};
+
+
+	// Add click event listener to toggle text content visibility
+	let currentTextContent = null;
+	let texts = document.querySelectorAll("li.Text");
+
+	texts.forEach((text) => {
+	text.addEventListener("click", (event) => {
+		let content = text.querySelector(".text-content");
+
+		if (currentTextContent && currentTextContent !== content) {
+		currentTextContent.classList.remove("clicked");
+		}
+
+		content.classList.toggle("clicked");
+		currentTextContent = content;
+
+		event.stopPropagation();
+	});
+	});
+
+	document.body.addEventListener("click", () => {
+	closeTextContent();
+	});
+
+	const closeTextContent = () => {
+	if (currentTextContent) {
+		currentTextContent.classList.remove("clicked");
+		currentTextContent = null;
+	}
+	};
+
+
+	// Add click event listener to toggle audio content visibility
+	let currentAudioContent = null;
+	let audios = document.querySelectorAll("li.Audio");
+
+	audios.forEach((audio) => {
+	audio.addEventListener("click", (event) => {
+		let content = audio.querySelector(".audio-content");
+
+		if (currentAudioContent && currentAudioContent !== content) {
+		currentAudioContent.classList.remove("clicked");
+		}
+
+		content.classList.toggle("clicked");
+		currentAudioContent = content;
+
+		event.stopPropagation();
+	});
+	});
+
+	document.body.addEventListener("click", () => {
+	closeAudioContent();
+	});
+
+	const closeAudioContent = () => {
+	if (currentAudioContent) {
+		currentAudioContent.classList.remove("clicked");
+		currentAudioContent = null;
+	}
+	};
+
+
+	// Add click event listener to toggle PDF content visibility
+	let currentPdfContent = null;
+	let pdfs = document.querySelectorAll("li.Pdf");
+
+	pdfs.forEach((pdf) => {
+	pdf.addEventListener("click", (event) => {
+		let content = pdf.querySelector(".pdf-content");
+
+		if (currentPdfContent && currentPdfContent !== content) {
+		currentPdfContent.classList.remove("clicked");
+		}
+
+		content.classList.toggle("clicked");
+		currentPdfContent = content;
+
+		event.stopPropagation();
+	});
+	});
+
+	document.body.addEventListener("click", () => {
+	closePdfContent();
+	});
+
+	const closePdfContent = () => {
+	if (currentPdfContent) {
+		currentPdfContent.classList.remove("clicked");
+		currentPdfContent = null;
+	}
+	};
+
 });
-
-document.body.addEventListener("click", () => {
-  closeVideoContent();
-});
-
-const closeVideoContent = () => {
-  if (currentVideoContent) {
-    currentVideoContent.classList.remove("clicked");
-    currentVideoContent = null;
-  }
-};
-
-let currentTextContent = null;
-
-// Add click event listener to toggle text content visibility
-let texts = document.querySelectorAll("li.Text");
-
-texts.forEach((text) => {
-  text.addEventListener("click", (event) => {
-    let content = text.querySelector(".text-content");
-
-    if (currentTextContent && currentTextContent !== content) {
-      currentTextContent.classList.remove("clicked");
-    }
-
-    content.classList.toggle("clicked");
-    currentTextContent = content;
-
-    event.stopPropagation();
-  });
-});
-
-document.body.addEventListener("click", () => {
-  closeTextContent();
-});
-
-const closeTextContent = () => {
-  if (currentTextContent) {
-    currentTextContent.classList.remove("clicked");
-    currentTextContent = null;
-  }
-};
-
-let currentAudioContent = null;
-
-// Add click event listener to toggle audio content visibility
-let audios = document.querySelectorAll("li.Audio");
-
-audios.forEach((audio) => {
-  audio.addEventListener("click", (event) => {
-    let content = audio.querySelector(".audio-content");
-
-    if (currentAudioContent && currentAudioContent !== content) {
-      currentAudioContent.classList.remove("clicked");
-    }
-
-    content.classList.toggle("clicked");
-    currentAudioContent = content;
-
-    event.stopPropagation();
-  });
-});
-
-document.body.addEventListener("click", () => {
-  closeAudioContent();
-});
-
-const closeAudioContent = () => {
-  if (currentAudioContent) {
-    currentAudioContent.classList.remove("clicked");
-    currentAudioContent = null;
-  }
-};
-
-let currentPdfContent = null;
-
-// Add click event listener to toggle PDF content visibility
-let pdfs = document.querySelectorAll("li.Pdf");
-
-pdfs.forEach((pdf) => {
-  pdf.addEventListener("click", (event) => {
-    let content = pdf.querySelector(".pdf-content");
-
-    if (currentPdfContent && currentPdfContent !== content) {
-      currentPdfContent.classList.remove("clicked");
-    }
-
-    content.classList.toggle("clicked");
-    currentPdfContent = content;
-
-    event.stopPropagation();
-  });
-});
-
-document.body.addEventListener("click", () => {
-  closePdfContent();
-});
-
-const closePdfContent = () => {
-  if (currentPdfContent) {
-    currentPdfContent.classList.remove("clicked");
-    currentPdfContent = null;
-  }
-};
-
-  });
