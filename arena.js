@@ -38,6 +38,7 @@ let renderBlock = (block) => {
 		let imageItem =
 		`
 			<li class="Image" >
+				<div class=image-shape></div>
 				<div class="image-content">
 					<figure>
 					<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">

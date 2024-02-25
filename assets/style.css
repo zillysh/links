@@ -161,7 +161,7 @@ ul::-webkit-scrollbar {
 
 /*IMAGES IMAGES IMAGES*/
 
-#channel-blocks li.Image {
+.image-shape {
   width: var(--block-size);
   height: calc(1.5 * var(--block-size));
   background-color: var(--yellow);
@@ -169,7 +169,7 @@ ul::-webkit-scrollbar {
   transition: transform 0.3s ease; 
 }
 
-li.Image:hover{
+.image-shape:hover{
   transform: scale(1.5);
 }
 
