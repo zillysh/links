@@ -178,6 +178,25 @@ ul::-webkit-scrollbar {
   text-align: center;
   color: black;
   z-index: 1;
+  background-color: rgba(255, 255, 255); 
+  border-radius: 10px; 
+  padding: 20px; 
+  border-radius: 10px; 
+  max-width: 900px;
+  max-height: 90%; 
+}
+
+.image-content img {
+  max-width: 100%; 
+  height: auto; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.image-content figcaption {
+  margin-top: 10px; 
+  font-size: 14px; 
+  color: #666; 
 }
 
 /*VIDEOS VIDEOS VIDEOS*/
