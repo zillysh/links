@@ -168,5 +168,14 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// let channelUsers = document.getElementById('channel-users') // Show them together
 		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 		renderUser(data.user, channelUsers)
+		
+		let images = document.querySelectorAll('li.Image');
 
-	})
+		images.forEach((image) => {
+		  image.onclick = () => {
+			let content = image.querySelector('.image-content');
+			content.classList.toggle('show');
+		  };
+		});
+
+});
