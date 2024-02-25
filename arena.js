@@ -37,7 +37,8 @@ let renderBlock = (block) => {
 	if (block.class == 'Image') {
 		let imageItem =
 		`
-			<li class="Image" >
+			<button>
+			<li class="image-button" >
 				<div class="image-content">
 					<figure>
 					<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
@@ -45,6 +46,7 @@ let renderBlock = (block) => {
 					</figure>
 				</div>
 			</li>
+			</button>
 		`
 	channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 	}
