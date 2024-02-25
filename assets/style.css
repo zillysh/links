@@ -10,10 +10,29 @@
 /* FONT DETAILS */
 
 /* MARGINS */
+:root{
+--block-size: 8px;
+--big-circle-width: 100vw;
+
+}
+
+/* COLORS */
+:root{
+  --orange: #FF827F;
+  --yellow: #FFF848;
+  --green: #6CFF95;
+  --blue: #00C2FF;
+  --pink: #E14FF0;
+  --light-blue: #DCFFF9;
+  
+  }
+  
+
+
 
 
 .background-image {
-  background-image: url(../assets/water.jpg);
+  background-image: url(../assets/gradient.jpg);
   background-position: top center;
   background-repeat: repeat;
   background-size: cover;
@@ -31,34 +50,29 @@ body {
 }
 
 ul {
-  width: 100vw; 
-  height: 100vw; 
+  width: var(--big-circle-width);
+  height: var(--big-circle-width);
   border-radius: 50%;
-  border-color: white;
-  border-width: 0.25px;
-  border-style: solid;
   background-color: rgba(74, 75, 104, 0.094); 
   overflow-x: auto; 
   backdrop-filter: blur(10px); 
+  box-shadow: 0 0 5px rgba(106, 161, 255, 0.5); /* Add shadow blur effect */
 }
 
-#channel-container::-webkit-scrollbar {
+ul::-webkit-scrollbar {
   display: none;
 }
 
 
 #channel-blocks {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 50px; 
-  padding: 30px; 
+  padding: 55px; 
   position: relative;
 }
 
 #channel-blocks li {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
   border-width: 5px;
   position: absolute; 
   top: 0;
@@ -121,8 +135,9 @@ ul {
 /*IMAGES IMAGES IMAGES*/
 
 #channel-blocks li.Image {
-  border-radius: 50%; 
-  background-color: rgb(246, 193, 193);
+  width: var(--block-size);
+  height: calc(1.5 * var(--block-size));
+  background-color: var(--yellow);
   position: relative; 
 }
 
@@ -140,8 +155,11 @@ ul {
 /*VIDEOS VIDEOS VIDEOS*/
 
 #channel-blocks li.Video {
-  border-radius: 50%; 
-  background-color: rgb(191, 191, 255);
+  width: 0;
+  height: 0;
+  border-left: var(--block-size) solid transparent;
+  border-right: var(--block-size) solid transparent;
+  border-bottom: calc(2 * var(--block-size)) solid var(--orange);
   position: relative; 
 }
 
@@ -159,8 +177,9 @@ ul {
 /*TEXT TEXT TEXT*/
 
 #channel-blocks li.Text {
-  border-radius: 50%; 
-  background-color: rgb(253, 253, 194);
+  width: calc(1.5 * var(--block-size));
+  height: calc(1.5 * var(--block-size));
+  background-color: var(--green);
   position: relative; 
 }
 
@@ -177,9 +196,11 @@ ul {
 
 /*LINK LINK LINK*/
 
-#channel-blocks li.Link {
-  border-radius: 50%; 
-  background-color: rgb(183, 224, 183);
+#channel-blocks li.Link { 
+  width: calc(1.5 * var(--block-size));
+  height: calc(1.5 * var(--block-size));
+  border-radius: 10px 0 0 0;
+  background-color: var(--blue);
   position: relative; 
 }
 
@@ -197,8 +218,10 @@ ul {
 /*PDF PDF PDF*/
 
 #channel-blocks li.Pdf {
-  border-radius: 50%; 
-  background-color: orange;
+  width: calc(1.5 * var(--block-size));
+  height: calc(1.5 * var(--block-size));
+  border-radius: 50%;
+  background-color: var(--pink);
   position: relative;
 }
 
@@ -217,8 +240,10 @@ ul {
 /*AUDIO AUDIO AUDIO*/
 
 #channel-blocks li.Audio {
-  border-radius: 50%; 
-  background-color: palevioletred;
+  width: calc(1.5 * var(--block-size));
+  height: calc(1.5 * var(--block-size));
+  border-radius: 50%;
+  background-color: var(--light-blue);
   position: relative; 
 }
 
@@ -235,4 +260,20 @@ ul {
 
 .clicked{
   display: block; 
+}
+
+
+
+
+@media screen and (min-width: 1440px) {
+/* MARGINS */
+:root{
+  --block-size: 9px;
+  --big-circle-width: 50vw;
+}
+
+#channel-blocks {
+  grid-template-columns: repeat(3, 1fr);
+  padding: 90px; 
+}
 }
