@@ -169,6 +169,10 @@ ul::-webkit-scrollbar {
   transition: transform 0.3s ease; 
 }
 
+li.Image:hover{
+  transform: scale(1.5);
+}
+
 .image-content {
   display: none;
   position: fixed;
