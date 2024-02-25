@@ -28,9 +28,6 @@
   }
   
 
-
-
-
 .background-image {
   background-image: url(../assets/gradient.jpg);
   background-position: top center;
@@ -269,7 +266,7 @@ ul::-webkit-scrollbar {
 /* MARGINS */
 :root{
   --block-size: 9px;
-  --big-circle-width: 50vw;
+  --big-circle-width: 40vw;
 }
 
 #channel-blocks {
