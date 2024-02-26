@@ -55,6 +55,7 @@ let renderBlock = (block) => {
 		let linkItem =
 			`
 			<li class="Link">
+			<div class=link-shape></div>
 			<div class="link-content">
 				<p><em>Link</em></p>
 				<h3>${ block.title }</h3>
@@ -70,6 +71,7 @@ let renderBlock = (block) => {
 		let textItem =
 		`
 			<li class="Text">
+			<div class=text-shape></div>
 			<div class="text-content">
 				<blockquote>
 					${block.content_html}
@@ -90,6 +92,7 @@ let renderBlock = (block) => {
 			let videoItem =
 				`
 				<li class=Video >
+					<div class=video-shape></div>
 					<div class="video-content">
 						<p><em>Video</em></p>
 						<video controls src="${ block.attachment.url }"></video>
@@ -106,6 +109,7 @@ let renderBlock = (block) => {
 			let pdfItem =
 				`
 					<li class="Pdf">
+					<div class=pdf-shape></div>
 					<div class="pdf-content">
 						<a href="${block.attachment.url}">
 							<figure>
@@ -125,6 +129,7 @@ let renderBlock = (block) => {
 			let audioItem =
 				`
 				<li class="Audio">
+				<div class=audio-shape></div>
 				<div class="audio-content">
 					<p><em>Audio</em></p>
 					<audio controls src="${ block.attachment.url }"></video>

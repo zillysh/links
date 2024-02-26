@@ -53,7 +53,7 @@ body {
   align-items: center;
   text-align: center;
   gap: 50px;
-  margin-top: 30px;
+  padding-top: 50px;
   height: 100vh; 
 }
 
@@ -77,13 +77,20 @@ h1{
 
 /* BLOCKS BLOCKS BLOCKS */
 
+.circle-blur{
+  backdrop-filter: blur(10px); 
+  width: var(--big-circle-width);
+  height: var(--big-circle-width);
+  border-radius: 50%;
+  position: fixed;
+}
+
 ul {
   width: var(--big-circle-width);
   height: var(--big-circle-width);
   border-radius: 50%;
   background-color: rgba(74, 75, 104, 0.094); 
   overflow-x: auto; 
-  backdrop-filter: blur(10px); 
   box-shadow: 0 0 5px rgba(106, 161, 255, 0.5); /* Add shadow blur effect */
 }
 
@@ -161,6 +168,11 @@ ul::-webkit-scrollbar {
 
 /*IMAGES IMAGES IMAGES*/
 
+
+#channel-blocks li.Image {
+  position: relative; 
+}
+
 .image-shape {
   width: var(--block-size);
   height: calc(1.5 * var(--block-size));
@@ -206,12 +218,21 @@ ul::-webkit-scrollbar {
 /*VIDEOS VIDEOS VIDEOS*/
 
 #channel-blocks li.Video {
+  position: relative; 
+}
+
+.video-shape {
   width: 0;
   height: 0;
   border-left: var(--block-size) solid transparent;
   border-right: var(--block-size) solid transparent;
   border-bottom: calc(2 * var(--block-size)) solid var(--orange);
-  position: relative; 
+  position: relative;
+  transition: transform 0.3s ease; 
+}
+
+.video-shape:hover{
+  transform: scale(1.5);
 }
 
 .video-content {
@@ -228,10 +249,19 @@ ul::-webkit-scrollbar {
 /*TEXT TEXT TEXT*/
 
 #channel-blocks li.Text {
+  position: relative; 
+}
+
+.text-shape{
   width: calc(1.5 * var(--block-size));
   height: calc(1.5 * var(--block-size));
   background-color: var(--green);
   position: relative; 
+  transition: transform 0.3s ease; 
+}
+
+.text-shape:hover{
+  transform: scale(1.5);
 }
 
 .text-content {
@@ -248,11 +278,20 @@ ul::-webkit-scrollbar {
 /*LINK LINK LINK*/
 
 #channel-blocks li.Link { 
+  position: relative; 
+}
+
+.link-shape{
   width: calc(1.5 * var(--block-size));
   height: calc(1.5 * var(--block-size));
   border-radius: 10px 0 0 0;
   background-color: var(--blue);
   position: relative; 
+  transition: transform 0.3s ease; 
+}
+
+.link-shape:hover{
+  transform: scale(1.5);
 }
 
 .link-content {
@@ -269,12 +308,22 @@ ul::-webkit-scrollbar {
 /*PDF PDF PDF*/
 
 #channel-blocks li.Pdf {
+  position: relative;
+}
+
+.pdf-shape{
   width: calc(1.5 * var(--block-size));
   height: calc(1.5 * var(--block-size));
   border-radius: 50%;
   background-color: var(--pink);
   position: relative;
+  transition: transform 0.3s ease; 
 }
+
+.pdf-shape:hover{
+  transform: scale(1.5);
+}
+
 
 .pdf-content {
   display: none; 
@@ -291,11 +340,20 @@ ul::-webkit-scrollbar {
 /*AUDIO AUDIO AUDIO*/
 
 #channel-blocks li.Audio {
+  position: relative; 
+}
+
+.audio-shape{
   width: calc(1.5 * var(--block-size));
   height: calc(1.5 * var(--block-size));
   border-radius: 50%;
   background-color: var(--light-blue);
   position: relative; 
+  transition: transform 0.3s ease; 
+}
+
+.audio-shape:hover{
+  transform: scale(1.5);
 }
 
 .audio-content {
