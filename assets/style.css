@@ -83,6 +83,7 @@ h1{
   height: var(--big-circle-width);
   border-radius: 50%;
   position: fixed;
+  -webkit-backdrop-filter: blur(10px);
 }
 
 ul {
@@ -187,6 +188,9 @@ ul::-webkit-scrollbar {
 
 .image-content {
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -196,22 +200,26 @@ ul::-webkit-scrollbar {
   z-index: 1;
   background-color: rgba(255, 255, 255); 
   border-radius: 10px; 
-  padding: 20px; 
+  padding: 30px; 
   border-radius: 10px; 
-  max-width: 900px;
-  max-height: 90%; 
+  width: 80vw;
+  height: 60vh; 
 }
 
 .image-content img {
-  max-width: 100%; 
-  height: auto; 
+  width: 70vw; 
+  height: 40vh;
+  object-fit: cover;
   border-radius: 8px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 10px;
 }
 
 .image-content figcaption {
   margin-top: 10px; 
-  font-size: 14px; 
+  font-family: var(--font-dm-mono);
+  font-size: 0.5em; 
+  text-transform: uppercase;
   color: #666; 
 }
 
@@ -368,7 +376,7 @@ ul::-webkit-scrollbar {
 }
 
 .clicked{
-  display: block; 
+  display: flex; 
 }
 
 
@@ -397,4 +405,11 @@ h1{
   padding: 90px; 
   grid-gap: 40px; 
 }
+
+
+.image-content {
+  width: 50vw;
+}
+
+
 }
