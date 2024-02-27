@@ -437,8 +437,8 @@ h2 {
   border-radius: 10px 0 0 0;
   background-color: var(--blue);
   position: absolute;
-  top: 30px;
-  left: 30px;
+  top: 20px;
+  left: 20px;
 }
 
 
@@ -507,8 +507,8 @@ h2 {
   border-radius: 50%;
   background-color: var(--pink);
   position: absolute;
-  top: 30px;
-  left: 30px;
+  top: 20px;
+  left: 20px;
 }
 
 /*AUDIO AUDIO AUDIO*/
@@ -530,16 +530,40 @@ h2 {
   transform: scale(1.5);
 }
 
+
+
 .audio-content {
-  display: none; 
-  position: fixed; 
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); 
+  transform: translate(-50%, -50%);
   text-align: center;
   color: black;
-  z-index: 999; 
+  z-index: 1;
+  background-color: rgba(255, 255, 255); 
+  border-radius: 10px; 
+  padding: 30px; 
+  border-radius: 10px; 
+  width: var(--card-width);
+  height: auto;
 }
+
+.side-audio-shape {
+  width: calc(1.5 * var(--block-size));
+  height: calc(1.5 * var(--block-size));
+  border-radius: 50%;
+  background-color: var(--light-blue);
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+
+
 
 .clicked{
   display: flex; 

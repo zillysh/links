@@ -142,7 +142,7 @@ let renderBlock = (block) => {
 				<div class=audio-shape></div>
 				<div class="audio-content">
 					<div class=side-audio-shape></div>
-					<p><em>LISTEN</em></p>
+					<h2><em>LISTEN</em></h2>
 					<audio controls src="${ block.attachment.url }"></video>
 				</div>
 				</li>
