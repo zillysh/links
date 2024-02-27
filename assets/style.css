@@ -56,7 +56,6 @@ body {
   align-items: center;
   text-align: center;
   gap: 50px;
-  padding-top: 50px;
   height: 100vh; 
 }
 
@@ -72,7 +71,7 @@ h1{
 
 .description{
   font-family: var(--font-dm-mono);
-  font-size: 0.3em;
+  font-size: 0.5em;
   color: white;
   text-transform: uppercase;
   padding: 5px;
@@ -569,6 +568,77 @@ h2 {
   display: flex; 
 }
 
+.shapes-key{
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid white;
+  padding: 8px;
+  text-align: center;
+  position: relative; 
+  flex-grow: 1;
+  border: 1px solid white;
+  border-left: none;
+}
+
+.box:first-child {
+  border-left: 1px solid white;
+}
+
+.image-key{
+  width: var(--block-size);
+  height: calc(1.5 * var(--block-size));
+  background-color: var(--yellow);
+}
+
+.text-key{
+  width: calc(1.5 * var(--block-size));
+  height: calc(1.5 * var(--block-size));
+  background-color: var(--green);
+}
+
+.link-key{
+  width: calc(1.5 * var(--block-size));
+  height: calc(1.5 * var(--block-size));
+  border-radius: 10px 0 0 0;
+  background-color: var(--blue);
+}
+
+.pdf-key{
+  width: calc(1.5 * var(--block-size));
+  height: calc(1.5 * var(--block-size));
+  border-radius: 50%;
+  background-color: var(--pink);
+}
+
+.audio-key{
+  width: calc(1.5 * var(--block-size));
+  height: calc(1.5 * var(--block-size));
+  border-radius: 50%;
+  background-color: var(--light-blue);
+}
+
+.video-key{
+  border-left: calc(0.8 * var(--block-size)) solid transparent;
+  border-right:calc(0.8 * var(--block-size)) solid transparent;
+  border-bottom: calc(1.6 * var(--block-size)) solid var(--orange);
+}
+
+.text{
+  font-family: var(--font-dm-mono);
+  font-size: 0.5em; 
+  text-transform: uppercase;
+  color: white; 
+}
 
 @media screen and (min-width: 1440px) {
 /* MARGINS */
