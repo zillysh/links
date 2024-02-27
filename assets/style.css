@@ -93,7 +93,7 @@ h1{
   width: var(--big-circle-width);
   height: var(--big-circle-width);
   border-radius: 50%;
-  position: fixed;
+  position: absolute;
   -webkit-backdrop-filter: blur(10px);
 }
 
