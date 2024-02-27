@@ -102,7 +102,7 @@ let renderBlock = (block) => {
 					<div class="video-content">
 						<div class=side-video-shape></div>
 						<h2><em>Protect Marine Life</em></h2>
-						<video src="${ block.attachment.url }" autoplay muted loop playsinline></video>
+						<video src="${ block.attachment.url }" autoplay muted loop playsInline></video>
 						<figcaption>${block.generated_title}</figcaption>
 					</div>
 				</li>
