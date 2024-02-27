@@ -40,6 +40,8 @@ let renderBlock = (block) => {
 			<li class="Image" >
 				<div class=image-shape></div>
 				<div class="image-content">
+					<div class=side-image-shape></div>
+					<h2><em>PLASTIC IS EVERYWHERE</em></h2>
 					<figure>
 					<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
 					<figcaption>${block.title}</figcaption>
@@ -57,9 +59,10 @@ let renderBlock = (block) => {
 			<li class="Link">
 			<div class=link-shape></div>
 			<div class="link-content">
-				<p><em>Link</em></p>
-				<h3>${ block.title }</h3>
-				<p><a href="${ block.source.url }">See the original ↗</a></p>
+				<div class=side-link-shape></div>
+				<h2><em>INFO</em></h2>
+				<p>${ block.title }</p>
+				<p><a href="${ block.source.url }">The Link ↗</a></p>
 			</div>
 			</li>
 			`
@@ -73,6 +76,8 @@ let renderBlock = (block) => {
 			<li class="Text">
 			<div class=text-shape></div>
 			<div class="text-content">
+				<div class=side-text-shape></div>
+				<h2>FACT</h2>
 				<blockquote>
 					${block.content_html}
 				</blockquote>
@@ -88,14 +93,17 @@ let renderBlock = (block) => {
 
 		// Uploaded videos!
 		if (attachment.includes('video')) {
+			console.log(block.generated_title)
 			// …still up to you, but we’ll give you the `video` element:
 			let videoItem =
 				`
 				<li class=Video >
 					<div class=video-shape></div>
 					<div class="video-content">
-						<p><em>Video</em></p>
-						<video controls src="${ block.attachment.url }"></video>
+						<div class=side-video-shape></div>
+						<h2><em>Protect Marine Life</em></h2>
+						<video src="${ block.attachment.url }" autoplay muted loop></video>
+						<figcaption>${block.generated_title}</figcaption>
 					</div>
 				</li>
 				`
@@ -111,10 +119,12 @@ let renderBlock = (block) => {
 					<li class="Pdf">
 					<div class=pdf-shape></div>
 					<div class="pdf-content">
+						<div class=side-pdf-shape></div>
+						<h2><em>READINGS</em></h2>
 						<a href="${block.attachment.url}">
 							<figure>
-								<img src="${block.image.large.url}" alt="${block.title}">
-								<figcaption>${block.title}</figcaption>
+								<img controls src="${block.image.large.url}" alt="${block.title}">
+								<figcaption>READ HERE ↗</figcaption>
 							</figure>
 						</a>
 					</div?>
@@ -131,7 +141,8 @@ let renderBlock = (block) => {
 				<li class="Audio">
 				<div class=audio-shape></div>
 				<div class="audio-content">
-					<p><em>Audio</em></p>
+					<div class=side-audio-shape></div>
+					<p><em>LISTEN</em></p>
 					<audio controls src="${ block.attachment.url }"></video>
 				</div>
 				</li>
