@@ -103,7 +103,7 @@ ul {
   border-radius: 50%;
   background-color: rgba(74, 75, 104, 0.094); 
   overflow-x: auto; 
-  position: absolute; /* Add this line */
+  position: absolute;
   box-shadow: 0 0 5px rgba(106, 161, 255, 0.5); /* Add shadow blur effect */
 }
 
