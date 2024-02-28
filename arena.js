@@ -93,7 +93,6 @@ let renderBlock = (block) => {
 
 		// Uploaded videos!
 		if (attachment.includes('video')) {
-			console.log(block.generated_title)
 			// …still up to you, but we’ll give you the `video` element:
 			let videoItem =
 				`
@@ -136,14 +135,16 @@ let renderBlock = (block) => {
 		// Uploaded audio!
 		else if (attachment.includes('audio')) {
 			// …still up to you, but here’s an `audio` element:
+			console.log(block.generated_title)
 			let audioItem =
 				`
 				<li class="Audio">
-				<div class=audio-shape></div>
+				<div class="audio-shape"></div>
 				<div class="audio-content">
 					<div class=side-audio-shape></div>
 					<h2><em>LISTEN</em></h2>
-					<audio controls src="${ block.attachment.url }"></video>
+					<audio controls src="${ block.attachment.url }"></audio>
+					<figcaption>${block.generated_title}</figcaption>
 				</div>
 				</li>
 				`

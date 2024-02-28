@@ -539,8 +539,6 @@ h2 {
   transform: scale(1.5);
 }
 
-
-
 .audio-content {
   display: none;
   flex-direction: column;
@@ -560,6 +558,15 @@ h2 {
   width: var(--card-width);
   height: auto;
 }
+
+.audio-content figcaption {
+  font-family: var(--font-dm-mono);
+  color: #666;
+  text-transform: uppercase;
+  margin-top: 15px;
+  font-size: 0.7em; 
+}
+
 
 .side-audio-shape {
   width: calc(1.5 * var(--block-size));
@@ -648,6 +655,51 @@ h2 {
   font-size: 0.5em; 
   text-transform: uppercase;
   color: white; 
+}
+
+
+@media screen and (min-width: 485px) {
+  :root{
+    --big-circle-width: 80vw;
+  }
+}
+
+
+@media screen and (min-width: 600px) {
+  :root{
+    --big-circle-width: 70vw;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  :root{
+    --big-circle-width: 60vw;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  :root{
+    --big-circle-width: 50vw;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  /* MARGINS */
+:root{
+  --block-size: 9px;
+  --big-circle-width: 40vw;
+  --card-width: 40vw;
+}
+
+h1{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-dm-mono);
+  font-size: 7em;
+  color: white;
+}
 }
 
 @media screen and (min-width: 1440px) {
